@@ -10,17 +10,9 @@ export default function Home() {
 
       <div>
           <div id="questionBox" className="div1">
-              <Link href="/email">
-                <button className="btn px-4 py-4">Email</button>
+              <Link href="/home">
+                <button className="btn px-4 py-4">Skip to home</button>
               </Link> 
-
-              <Link href="/text">
-                <button>text</button>
-              </Link>
-
-              <Link href="/ad">
-                <button>Ads</button>
-              </Link>
           </div>
         </div>
     </main>

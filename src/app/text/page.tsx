@@ -65,12 +65,15 @@ export default function Home() {
 
       <div id="topBar" className="div1">
         <h1>Cybersecurity Assessment</h1> 
+        <Link href="/">
+          <button>Logout</button>
+        </Link> 
       </div>
 
       <div>
           <div id="questionBox" className="div1">
 
-            <Link href="/">
+            <Link href="/home">
               <button>Home</button>
             </Link>
 
