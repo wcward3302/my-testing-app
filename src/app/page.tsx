@@ -1,58 +1,4 @@
-
-"use client"
-const data_json = require('./data.json');
-
-var counter = 0
-
-function testButtonPress(){
-  let phish_button = document.getElementById("phishButton") as HTMLElement
-  let legit_button = document.getElementById("legitButton") as HTMLElement
-  let continue_button = document.getElementById("continueButton") as HTMLElement
-
-
-  let image_element = document.getElementById("example_image") as HTMLImageElement
-  image_element.src=data_json.AssessmentQuestions[0].emails[counter].location_annotate
-
-  let phish_value = data_json.AssessmentQuestions[0].emails[counter].phishing
-
-  // if example is phishing
-  if (phish_value == true){ 
-    phish_button.style.background="green"
-    legit_button.style.background="red"
-    continue_button.style.visibility="visible"
-  }
-
-  // if example is legit
-  else{ 
-    phish_button.style.background="red"
-    legit_button.style.background="green"
-    continue_button.style.visibility="visible"
-  }
-}
-
-function next(){
-  if (counter+1 < Object.keys(data_json.AssessmentQuestions[0].emails).length){
-
-    // This is where the end assessment would be!
-    counter++
-  }
-  else{
-    counter =0
-  }
-
-  // get all the elements to be modified
-  let phish_button = document.getElementById("phishButton") as HTMLElement
-  let legit_button = document.getElementById("legitButton") as HTMLElement
-  let continue_button = document.getElementById("continueButton") as HTMLElement
-
-  let image_element = document.getElementById("example_image") as HTMLImageElement
-  image_element.src=data_json.AssessmentQuestions[0].emails[counter].location
-
-  // reset CSS
-  phish_button.style.background="blue"
-  legit_button.style.background="blue"
-  continue_button.style.visibility="hidden"
-}
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -64,21 +10,19 @@ export default function Home() {
 
       <div>
           <div id="questionBox" className="div1">
+              <Link href="/email">
+                <button className="btn px-4 py-4">Email</button>
+              </Link> 
 
-            <img id="example_image" src="/emails/email1.png"></img>
+              <Link href="/text">
+                <button>text</button>
+              </Link>
 
-            <button id="phishButton" onClick={testButtonPress}>Phishing</button>
-
-            <button id="legitButton" onClick={testButtonPress}>Legit</button>
-
-            <button id="continueButton" className ="buttonHidden" onClick={next}>Continue</button>
-
-
+              <Link href="/ad">
+                <button>Ads</button>
+              </Link>
           </div>
-
         </div>
-      
-
     </main>
   );
 }
