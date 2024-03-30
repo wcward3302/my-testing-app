@@ -33,15 +33,3 @@ button {
 .buttonHidden {
   visibility: hidden;
 }
-
-.buttonNormal {
-  background-color: gray;
-}
-
-.buttonRed {
-  background-color: red;
-}
-
-.buttonGreen {
-  background-color: green;
-}
