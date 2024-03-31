@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <main>
 
-      <div id="topBar" className="div">
+      <div id="topBar" className="div1">
         <h1>Cybersecurity Assessment</h1> 
       </div>
 
